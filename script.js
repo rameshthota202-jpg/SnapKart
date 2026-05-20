@@ -1,5 +1,17 @@
 const products = [
   {
+    name: "Telugu Wedding Welcome Board",
+    category: "Welcome Board",
+    priceOptions: [
+      { label: "12x18 inches", price: 599 },
+      { label: "18x24 inches (1.5x2 Feet)", price: 799 },
+      { label: "24x36 inches (2x3 Feet)", price: 1299 }
+    ],
+    note: "Couple names and surname customization available",
+    rating: 4.9,
+    image: "assets/products/welcome-board/telugu-wedding-welcome-board.webp"
+  },
+  {
     name: "Barbie School Book Labels with Customized Photo - Pack of 30 Stickers",
     category: "Paper Stickers",
     normalPrice: 99,
@@ -80,14 +92,26 @@ const currency = new Intl.NumberFormat("en-IN", {
 });
 
 function productCard(product) {
-  const priceHtml = product.normalPrice
-    ? `
+  let priceHtml = `<span class="price">${currency.format(product.price)}</span>`;
+
+  if (product.priceOptions) {
+    priceHtml = `
+        <div class="price-options">
+          ${product.priceOptions
+            .map((option) => `<span><strong>${currency.format(option.price)}</strong> ${option.label}</span>`)
+            .join("")}
+        </div>
+      `;
+  } else if (product.normalPrice) {
+    priceHtml = `
         <div class="price-options">
           <span><strong>${currency.format(product.normalPrice)}</strong> Normal</span>
           <span><strong>${currency.format(product.waterproofPrice)}</strong> Waterproof</span>
         </div>
-      `
-    : `<span class="price">${currency.format(product.price)}</span>`;
+      `;
+  }
+
+  const noteHtml = product.note ? `<p class="product-note">${product.note}</p>` : "";
 
   return `
     <article class="product-card">
@@ -97,6 +121,7 @@ function productCard(product) {
       </div>
       <div class="product-info">
         <h3>${product.name}</h3>
+        ${noteHtml}
         <div class="meta">
           ${priceHtml}
           <span class="rating">Rating ${product.rating}</span>

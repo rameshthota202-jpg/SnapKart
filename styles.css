@@ -294,6 +294,13 @@ h2 {
   line-height: 1.35;
 }
 
+.product-note {
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .meta {
   display: flex;
   align-items: flex-start;
