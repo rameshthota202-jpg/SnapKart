@@ -12,6 +12,30 @@ const products = [
     image: "assets/products/welcome-board/telugu-wedding-welcome-board.webp"
   },
   {
+    name: "Telugu Wedding Welcome Board 12x18",
+    category: "Welcome Board",
+    price: 599,
+    note: "Couple names and surname customization available",
+    rating: 4.9,
+    image: "assets/products/welcome-board/teluguweddingwelcomesunboardbuyonline.webp"
+  },
+  {
+    name: "Telugu Wedding Welcome Board 18x24",
+    category: "Welcome Board",
+    price: 799,
+    note: "Couple names and surname customization available",
+    rating: 4.9,
+    image: "assets/products/welcome-board/welcome_wedding_sun_board_designs_533c7113-401f-41ab-8c65-44d42d0a7f04.webp"
+  },
+  {
+    name: "Telugu Wedding Welcome Board 24x36",
+    category: "Welcome Board",
+    price: 1299,
+    note: "Couple names and surname customization available",
+    rating: 4.9,
+    image: "assets/products/welcome-board/582d185afeead6eb016a515d47a5c143.jpg"
+  },
+  {
     name: "Barbie School Book Labels with Customized Photo - Pack of 30 Stickers",
     category: "Paper Stickers",
     normalPrice: 99,
