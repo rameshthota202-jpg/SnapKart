@@ -1,5 +1,61 @@
 const products = [
   {
+    name: "Barbie School Book Labels with Customized Photo - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/Barbie_School_Books_Lables.webp"
+  },
+  {
+    name: "Ben 10 School Book Labels with Customized Photo - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/ben_10_books_stickers_order_online.webp"
+  },
+  {
+    name: "Durga God School Book Labels with Customized Photo - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/Durga_copy.webp"
+  },
+  {
+    name: "School Books Label with Customized Photo - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/fb51dff9ddfd814b49ad03cf45ebefdc.jpg"
+  },
+  {
+    name: "School Books Labels Stickers with Photo and Name - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/School_Books_Lables_Stickers.webp"
+  },
+  {
+    name: "Spiderman School Book Labels with Photo and Name - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/Spiderman_School_books_lables_stickers_with_photo_and_name.webp"
+  },
+  {
+    name: "Spiderman School Book Labels Extra Design - Pack of 30 Stickers",
+    category: "Paper Stickers",
+    normalPrice: 99,
+    waterproofPrice: 129,
+    rating: 4.9,
+    image: "assets/products/Spiderman_School_books_lables_stickers_with_photo_and_name (1).webp"
+  },
+  {
     name: "Customized Book Labels with Kid's Photo & Hindu Gods Designs - Set of 30 Stickers",
     category: "Paper Stickers",
     normalPrice: 99,
