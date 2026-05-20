@@ -1,302 +1,91 @@
-export default function SnapKartWebsite() {
-  const products = [
-    {
-      title: 'Premium Acrylic Frame',
-      price: '₹699',
-      image:
-        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Spotify LED Frame',
-      price: '₹999',
-      image:
-        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Couple Photo Frame',
-      price: '₹799',
-      image:
-        'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Custom Mug Print',
-      price: '₹399',
-      image:
-        'https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=1200&auto=format&fit=crop',
-    },
-  ];
-
-  return (
-    <div className="bg-white min-h-screen font-sans text-zinc-900">
-      {/* Top Bar */}
-      <div className="bg-black text-white text-center py-2 text-sm font-medium">
-        🚚 Free Shipping On Orders Above ₹999
-      </div>
-
-      {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 md:px-16 py-5 shadow-sm sticky top-0 bg-white z-50">
-        <h1 className="text-4xl font-extrabold tracking-wide text-pink-600">
-          SnapKart
-        </h1>
-
-        <div className="hidden md:flex gap-8 font-semibold text-sm">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">Acrylic Frames</a>
-          <a href="#">Wedding Gifts</a>
-          <a href="#">Contact</a>
-        </div>
-
-        <div className="flex gap-4 items-center">
-          <button className="border px-5 py-2 rounded-full font-semibold hover:bg-pink-50">
-            Login
-          </button>
-
-          <button className="bg-pink-600 text-white px-5 py-2 rounded-full font-semibold shadow-lg">
-            Cart
-          </button>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snap Kart | Fresh Daily Deals</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Snap Kart home">
+        <span class="brand-mark">S</span>
+        <span>Snap Kart</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#offers">Offers</a>
+        <a href="#support">Support</a>
       </nav>
+      <button class="cart-button" type="button" aria-label="Cart">
+        <span class="cart-icon" aria-hidden="true">Cart</span>
+        <span id="cartCount">0</span>
+      </button>
+    </header>
 
-      {/* Hero Banner */}
-      <section className="grid md:grid-cols-2 items-center gap-10 px-6 md:px-16 py-16 bg-pink-50">
-        <div>
-          <p className="uppercase tracking-[4px] text-pink-600 font-bold text-sm">
-            Premium Custom Gifts
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Fast picks. Fair prices. Fresh stock.</p>
+          <h1>Snap Kart</h1>
+          <p>
+            Daily essentials, smart gadgets, home picks, and beauty favorites
+            ready to add to your cart in one clean place.
           </p>
-
-          <h2 className="text-5xl md:text-7xl font-black leading-tight mt-4">
-            Create Your
-            <span className="text-pink-600"> Memories </span>
-            Forever
-          </h2>
-
-          <p className="mt-6 text-zinc-600 text-lg leading-8 max-w-xl">
-            Upload your favorite photos and customize premium acrylic
-            frames, LED gifts, wedding gifts, mugs and more.
-          </p>
-
-          <div className="flex gap-4 mt-8 flex-wrap">
-            <button className="bg-pink-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl">
-              Upload Photo
-            </button>
-
-            <button className="border border-zinc-300 px-8 py-4 rounded-full font-bold text-lg">
-              Explore Gifts
-            </button>
-          </div>
+          <a class="primary-action" href="#products">Shop products</a>
         </div>
-
-        <div>
+        <div class="hero-panel" aria-label="Featured deal">
           <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop"
-            className="rounded-[40px] shadow-2xl"
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80"
+            alt="Fresh groceries arranged in a market basket"
           />
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="px-6 md:px-16 py-16">
-        <div className="text-center mb-12">
-          <h3 className="text-5xl font-black">Shop By Category</h3>
-          <p className="text-zinc-500 mt-4 text-lg">
-            Trending premium customized gifts.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            {
-              name: 'Acrylic Frames',
-              img: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop',
-            },
-            {
-              name: 'LED Frames',
-              img: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop',
-            },
-            {
-              name: 'Wedding Gifts',
-              img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
-            },
-            {
-              name: 'Custom Mugs',
-              img: 'https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?q=80&w=1200&auto=format&fit=crop',
-            },
-          ].map((item) => (
-            <div
-              key={item.name}
-              className="rounded-[30px] overflow-hidden shadow-xl hover:scale-[1.03] transition bg-white"
-            >
-              <img src={item.img} className="h-56 w-full object-cover" />
-
-              <div className="p-5 text-center font-bold text-lg">
-                {item.name}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Products */}
-      <section className="px-6 md:px-16 py-16 bg-zinc-50">
-        <div className="flex items-center justify-between mb-10">
-          <div>
-            <h3 className="text-5xl font-black">Best Sellers</h3>
-            <p className="text-zinc-500 mt-3 text-lg">
-              Most loved gifts by customers.
-            </p>
+          <div class="deal-badge">
+            <span>Today</span>
+            <strong>Up to 35% off</strong>
           </div>
-
-          <button className="bg-pink-600 text-white px-6 py-3 rounded-full font-bold">
-            View All
-          </button>
-        </div>
-
-        <div className="grid md:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <div
-              key={product.title}
-              className="bg-white rounded-[35px] overflow-hidden shadow-lg hover:shadow-2xl transition"
-            >
-              <div className="relative">
-                <img
-                  src={product.image}
-                  className="h-80 w-full object-cover"
-                />
-
-                <div className="absolute top-4 left-4 bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-                  Trending
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h4 className="text-2xl font-bold">{product.title}</h4>
-
-                <p className="text-pink-600 text-2xl font-black mt-2">
-                  {product.price}
-                </p>
-
-                <button className="w-full mt-6 bg-black text-white py-4 rounded-full font-bold hover:bg-pink-600 transition">
-                  Customize Now
-                </button>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* Live Customize */}
-      <section className="grid md:grid-cols-2 gap-14 items-center px-6 md:px-16 py-20">
+      <section class="toolbar" id="products" aria-label="Product filters">
         <div>
-          <img
-            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop"
-            className="rounded-[40px] shadow-2xl"
-          />
+          <p class="section-kicker">Catalog</p>
+          <h2>Featured Products</h2>
         </div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Search products" />
+        </label>
+      </section>
 
+      <section class="category-tabs" aria-label="Product categories">
+        <button class="category-chip active" data-category="All" type="button">All</button>
+        <button class="category-chip" data-category="Paper Stickers" type="button">Paper Stickers</button>
+        <button class="category-chip" data-category="Grocery" type="button">Grocery</button>
+        <button class="category-chip" data-category="Electronics" type="button">Electronics</button>
+        <button class="category-chip" data-category="Home" type="button">Home</button>
+        <button class="category-chip" data-category="Beauty" type="button">Beauty</button>
+      </section>
+
+      <section class="products-grid" id="productsGrid" aria-live="polite"></section>
+
+      <section class="offer-strip" id="offers">
         <div>
-          <p className="uppercase tracking-[4px] text-pink-600 font-bold text-sm">
-            Live Preview
-          </p>
-
-          <h3 className="text-5xl font-black leading-tight mt-4">
-            Customize Your Gift Instantly
-          </h3>
-
-          <p className="mt-6 text-zinc-600 text-lg leading-8">
-            Upload your photo, edit names, preview designs and order in
-            seconds.
-          </p>
-
-          <div className="bg-white shadow-2xl rounded-[35px] p-8 mt-10 border border-zinc-100">
-            <input
-              placeholder="Enter Your Name"
-              className="w-full border border-zinc-300 rounded-2xl px-5 py-4 outline-none"
-            />
-
-            <div className="border-2 border-dashed border-zinc-300 rounded-[30px] p-14 mt-6 text-center text-zinc-500">
-              Upload Your Photo Here
-            </div>
-
-            <button className="w-full mt-6 bg-pink-600 text-white py-4 rounded-full font-bold text-lg shadow-lg">
-              Generate Preview
-            </button>
-          </div>
+          <p class="section-kicker">Snap deal</p>
+          <h2>Free delivery over Rs. 799</h2>
         </div>
+        <p>
+          Add products from any category and keep the cart moving. Weekend
+          essentials ship first from the nearest store.
+        </p>
       </section>
+    </main>
 
-      {/* Testimonials */}
-      <section className="px-6 md:px-16 py-16 bg-black text-white">
-        <div className="text-center mb-12">
-          <h3 className="text-5xl font-black">Happy Customers</h3>
-          <p className="text-zinc-400 mt-4 text-lg">
-            Thousands of happy memories delivered.
-          </p>
-        </div>
+    <footer id="support">
+      <span>Snap Kart</span>
+      <span>Support: hello@snapkart.local</span>
+    </footer>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {['Amazing Quality!', 'Super Fast Delivery!', 'Best Gift Website!'].map(
-            (review) => (
-              <div
-                key={review}
-                className="bg-zinc-900 rounded-[35px] p-8 border border-zinc-800"
-              >
-                <p className="text-2xl">⭐ ⭐ ⭐ ⭐ ⭐</p>
-                <p className="mt-5 text-lg text-zinc-300 leading-8">
-                  {review} SnapKart products are premium and beautiful.
-                </p>
-              </div>
-            )
-          )}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-white border-t px-6 md:px-16 py-14">
-        <div className="grid md:grid-cols-4 gap-10">
-          <div>
-            <h4 className="text-4xl font-black text-pink-600">
-              SnapKart
-            </h4>
-            <p className="text-zinc-600 mt-5 leading-8">
-              India's Premium Custom Gifts Platform.
-            </p>
-          </div>
-
-          <div>
-            <h5 className="font-bold text-xl mb-5">Quick Links</h5>
-            <div className="space-y-3 text-zinc-600">
-              <p>Home</p>
-              <p>Shop</p>
-              <p>Track Order</p>
-              <p>Contact</p>
-            </div>
-          </div>
-
-          <div>
-            <h5 className="font-bold text-xl mb-5">Categories</h5>
-            <div className="space-y-3 text-zinc-600">
-              <p>Acrylic Frames</p>
-              <p>LED Frames</p>
-              <p>Wedding Gifts</p>
-              <p>Mugs</p>
-            </div>
-          </div>
-
-          <div>
-            <h5 className="font-bold text-xl mb-5">Contact</h5>
-            <div className="space-y-3 text-zinc-600">
-              <p>📞 +91 90000 00000</p>
-              <p>📧 support@snapkart.in</p>
-              <p>📍 Hyderabad, India</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t mt-10 pt-6 text-center text-zinc-500 text-sm">
-          © 2026 SnapKart. All Rights Reserved.
-        </div>
-      </footer>
-    </div>
-  );
-}
+    <script src="script.js"></script>
+  </body>
+</html>
