@@ -193,3 +193,14 @@ productsGrid.addEventListener("click", (event) => {
 });
 
 renderProducts();
+const productsContainer = document.getElementById("products");
+
+products.forEach((product) => {
+  productsContainer.innerHTML += `
+    <div style="padding:20px;margin:20px;border:1px solid #ddd;border-radius:10px;">
+      <img src="${product.image}" style="width:300px;border-radius:10px;">
+      <h2>${product.title}</h2>
+      <p>${product.price}</p>
+    </div>
+  `;
+});
