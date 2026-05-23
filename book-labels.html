@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -208,8 +209,8 @@ background:#009624;
 <option>Waterproof</option>
 </select>
 
-<button class="order-btn">
-Order Now
+<button class="order-btn" onclick="addToCart()">
+Add To Cart 🛒
 </button>
 
 </div>
@@ -249,6 +250,24 @@ reader.readAsDataURL(file);
 }
 
 });
+
+function addToCart(){
+
+const product = {
+name: "Customized School Labels",
+price: 99,
+image: document.getElementById("mainProductImage").src
+};
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push(product);
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+alert("Added To Cart 🛒");
+
+}
 
 </script>
 
