@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>SnapKart</title>
 
   <style>
 
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
       font-family:Arial,sans-serif;
-      background:#f5f5f5;
     }
 
-    a{
-      text-decoration:none;
+    body{
+      background:#f5f5f5;
     }
 
     /* HERO SECTION */
 
     .hero{
+
       height:100vh;
 
       background:
@@ -35,19 +40,16 @@
       text-align:center;
       color:white;
       padding:20px;
-    }
 
-    .hero-content{
-      animation:fadeUp 1.5s ease;
     }
 
     .hero-content h1{
-      font-size:60px;
-      margin-bottom:15px;
+      font-size:65px;
+      margin-bottom:20px;
     }
 
     .hero-content p{
-      font-size:22px;
+      font-size:24px;
       margin-bottom:30px;
     }
 
@@ -59,19 +61,16 @@
     }
 
     .btn{
-      background:white;
-      color:black;
       padding:14px 30px;
       border-radius:40px;
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
-      animation:zoomIn 1.2s ease;
     }
 
-    .btn:hover{
-      transform:scale(1.08);
-      box-shadow:0 0 20px rgba(255,255,255,0.8);
+    .btn-primary{
+      background:white;
+      color:black;
     }
 
     .btn-secondary{
@@ -79,60 +78,34 @@
       color:white;
     }
 
-    /* ANIMATIONS */
-
-    @keyframes fadeUp{
-
-      from{
-        opacity:0;
-        transform:translateY(50px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-
-    }
-
-    @keyframes zoomIn{
-
-      from{
-        opacity:0;
-        transform:scale(0.5);
-      }
-
-      to{
-        opacity:1;
-        transform:scale(1);
-      }
-
+    .btn:hover{
+      transform:scale(1.08);
     }
 
     /* PRODUCTS */
 
     .products{
-      padding:60px 20px;
+      padding:80px 20px;
       text-align:center;
     }
 
     .products h2{
-      font-size:40px;
-      margin-bottom:40px;
+      font-size:48px;
+      margin-bottom:50px;
     }
 
     .product-container{
       display:flex;
       justify-content:center;
-      gap:30px;
       flex-wrap:wrap;
+      gap:35px;
     }
 
     .product-card{
+      width:360px;
       background:white;
-      width:280px;
-      padding:20px;
       border-radius:20px;
+      padding:20px;
       box-shadow:0 0 20px rgba(0,0,0,0.1);
       transition:0.3s;
     }
@@ -141,34 +114,81 @@
       transform:translateY(-10px);
     }
 
-    .product-card img{
+    /* SLIDESHOW */
+
+    .slideshow-container{
       width:100%;
+      height:260px;
+      position:relative;
+      overflow:hidden;
       border-radius:15px;
     }
 
-    .product-card h3{
-      margin-top:15px;
-      font-size:22px;
-      color:black;
+    .slide{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      position:absolute;
+      left:0;
+      top:0;
+      opacity:0;
+      transition:1s;
     }
 
-    .product-card p{
-      font-size:20px;
+    .slide.active{
+      opacity:1;
+    }
+
+    .product-card h3{
+      font-size:30px;
+      margin-top:20px;
+    }
+
+    .price{
       color:#ff4081;
+      font-size:28px;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    /* OPTIONS */
+
+    .options{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+      margin:25px 0;
+      flex-wrap:wrap;
+    }
+
+    .option-btn{
+      border:none;
+      padding:12px 25px;
+      border-radius:30px;
+      background:#eee;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .option-btn:hover{
+      background:#111;
+      color:white;
     }
 
     .buy-btn{
       display:inline-block;
-      margin-top:15px;
-      background:#111;
+      padding:14px 35px;
+      background:#25D366;
       color:white;
-      padding:12px 25px;
-      border-radius:30px;
       text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:0.3s;
     }
 
     .buy-btn:hover{
-      background:#ff4081;
+      transform:scale(1.05);
     }
 
     /* MOBILE */
@@ -176,7 +196,7 @@
     @media(max-width:768px){
 
       .hero-content h1{
-        font-size:38px;
+        font-size:42px;
       }
 
       .hero-content p{
@@ -184,7 +204,11 @@
       }
 
       .products h2{
-        font-size:32px;
+        font-size:36px;
+      }
+
+      .product-card{
+        width:100%;
       }
 
     }
@@ -207,7 +231,7 @@
 
       <div class="hero-buttons">
 
-        <a href="https://wa.me/919848830202" class="btn">
+        <a href="#products" class="btn btn-primary">
           Shop Now
         </a>
 
@@ -223,22 +247,54 @@
 
   <!-- PRODUCTS -->
 
-  <section class="products">
+  <section class="products" id="products">
 
     <h2>School Book Labels 📚</h2>
 
     <div class="product-container">
 
+      <!-- PRODUCT CARD -->
+
       <div class="product-card">
 
-        <a href="book-labels.html">
+        <!-- SLIDESHOW -->
 
-          <img src="images/book-labels/Spiderman.webp">
+        <div class="slideshow-container">
 
-          <h3>School Book Labels</h3>
+          <img class="slide active" src="images/book-labels/Spiderman.webp" alt="">
+          <img class="slide" src="images/book-labels/Barbie.webp" alt="">
+          <img class="slide" src="images/book-labels/Ben10.webp" alt="">
+          <img class="slide" src="images/book-labels/Doraemon.webp" alt="">
+          <img class="slide" src="images/book-labels/Ironman.webp" alt="">
+          <img class="slide" src="images/book-labels/Shinchan.webp" alt="">
+          <img class="slide" src="images/book-labels/Rocket.webp" alt="">
+          <img class="slide" src="images/book-labels/SchoolBus.webp" alt="">
+          <img class="slide" src="images/book-labels/Astronaut.webp" alt="">
+          <img class="slide" src="images/book-labels/Durga.webp" alt="">
+          <img class="slide" src="images/book-labels/viratkohli.webp" alt="">
 
-          <p>₹99</p>
+        </div>
 
+        <h3>Customized School Labels</h3>
+
+        <p class="price">₹99</p>
+
+        <!-- OPTIONS -->
+
+        <div class="options">
+
+          <button class="option-btn">
+            Normal
+          </button>
+
+          <button class="option-btn">
+            Waterproof
+          </button>
+
+        </div>
+
+        <a href="https://wa.me/919848830202" class="buy-btn">
+          Order Now
         </a>
 
       </div>
@@ -247,5 +303,30 @@
 
   </section>
 
+  <!-- SCRIPT -->
+
+  <script>
+
+    const slides = document.querySelectorAll(".slide");
+
+    let currentSlide = 0;
+
+    setInterval(() => {
+
+      slides[currentSlide].classList.remove("active");
+
+      currentSlide++;
+
+      if(currentSlide >= slides.length){
+        currentSlide = 0;
+      }
+
+      slides[currentSlide].classList.add("active");
+
+    }, 2500);
+
+  </script>
+
 </body>
+
 </html>
