@@ -111,7 +111,62 @@
       }
 
     }
+/* PRODUCTS SECTION */
 
+.products{
+  padding:60px 20px;
+  text-align:center;
+}
+
+.products h2{
+  font-size:40px;
+  margin-bottom:40px;
+}
+
+.product-container{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.product-card{
+  background:white;
+  width:280px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-10px);
+}
+
+.product-card img{
+  width:100%;
+  border-radius:15px;
+}
+
+.product-card h3{
+  margin-top:15px;
+  font-size:24px;
+}
+
+.product-card p{
+  font-size:20px;
+  color:#ff4081;
+}
+
+.buy-btn{
+  display:inline-block;
+  margin-top:15px;
+  background:#111;
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+}
   </style>
 
 </head>
@@ -141,6 +196,43 @@
     </div>
 
   </section>
+<!-- PRODUCTS SECTION -->
 
+<section class="products">
+
+  <h2>Our Products 🛍️</h2>
+
+  <div class="product-container">
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250" alt="Product">
+      <h3>Custom Mug</h3>
+      <p>₹299</p>
+      <a href="https://wa.me/919848830202" class="buy-btn">
+        Order Now
+      </a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250" alt="Product">
+      <h3>Photo Frame</h3>
+      <p>₹499</p>
+      <a href="https://wa.me/919848830202" class="buy-btn">
+        Order Now
+      </a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250" alt="Product">
+      <h3>T-Shirt Print</h3>
+      <p>₹699</p>
+      <a href="https://wa.me/919848830202" class="buy-btn">
+        Order Now
+      </a>
+    </div>
+
+  </div>
+
+</section>
 </body>
 </html>
