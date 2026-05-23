@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>School Book Labels</title>
 
 <style>
@@ -76,7 +77,7 @@ border:2px solid transparent;
 }
 
 .thumbnails img:hover{
-border:2px solid #000;
+border:2px solid black;
 }
 
 h1{
@@ -88,6 +89,7 @@ margin-bottom:10px;
 font-size:35px;
 font-weight:bold;
 color:#ff0066;
+margin-bottom:20px;
 }
 
 .buttons{
@@ -118,6 +120,7 @@ margin-top:8px;
 margin-bottom:20px;
 border-radius:8px;
 border:1px solid #ccc;
+font-size:16px;
 }
 
 .order-btn{
@@ -137,6 +140,7 @@ background:#009624;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -156,10 +160,15 @@ background:#009624;
 <div class="thumbnails">
 
 <img src="images/book-labels/Spiderman.webp" onclick="changeImage(this.src)">
+
 <img src="images/book-labels/Barbie.webp" onclick="changeImage(this.src)">
+
 <img src="images/book-labels/Rocket.webp" onclick="changeImage(this.src)">
+
 <img src="images/book-labels/SchoolBus.webp" onclick="changeImage(this.src)">
+
 <img src="images/book-labels/Astronaut.webp" onclick="changeImage(this.src)">
+
 <img src="images/book-labels/Doraemon.webp" onclick="changeImage(this.src)">
 
 </div>
@@ -170,7 +179,7 @@ background:#009624;
 
 <h1>School Book Labels 📚</h1>
 
-<div class="price">₹99</div>
+<div class="price" id="price">₹99</div>
 
 <h3>Sticker Models</h3>
 
@@ -204,13 +213,18 @@ background:#009624;
 
 <h3>Paper Quality</h3>
 
-<select>
-<option>Normal</option>
-<option>Waterproof</option>
+<select id="paperQuality" onchange="updatePrice()">
+
+<option value="99">Normal - ₹99</option>
+
+<option value="129">Waterproof - ₹129</option>
+
 </select>
 
 <button class="order-btn" onclick="addToCart()">
+
 Add To Cart 🛒
+
 </button>
 
 </div>
@@ -220,11 +234,15 @@ Add To Cart 🛒
 <script>
 
 function changeImage(src){
+
 document.getElementById("mainProductImage").src = src;
+
 }
 
 function setDesign(src){
+
 document.getElementById("mainProductImage").src = src;
+
 }
 
 document.getElementById("photoUpload").addEventListener("change", function(event){
@@ -251,12 +269,26 @@ reader.readAsDataURL(file);
 
 });
 
+function updatePrice(){
+
+const price = document.getElementById("paperQuality").value;
+
+document.getElementById("price").innerText = "₹" + price;
+
+}
+
 function addToCart(){
 
+const selectedPrice = document.getElementById("paperQuality").value;
+
 const product = {
+
 name: "Customized School Labels",
-price: 99,
+
+price: selectedPrice,
+
 image: document.getElementById("mainProductImage").src
+
 };
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -272,4 +304,5 @@ alert("Added To Cart 🛒");
 </script>
 
 </body>
+
 </html>
