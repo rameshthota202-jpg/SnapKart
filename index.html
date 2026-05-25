@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SnapKart Premium</title>
 
 <link rel="stylesheet"
@@ -22,26 +20,22 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5f5f5;
+background:#f4f4f4;
 }
 
 /* NAVBAR */
 
 nav{
-width:100%;
 background:white;
-padding:20px 40px;
+padding:20px 50px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
-position:sticky;
-top:0;
-z-index:1000;
 }
 
 .logo{
-font-size:32px;
+font-size:35px;
 font-weight:bold;
 }
 
@@ -53,18 +47,17 @@ list-style:none;
 
 nav ul li a{
 text-decoration:none;
-color:#111;
 font-weight:bold;
+color:#111;
 }
 
-/* PRODUCT SECTION */
+/* PRODUCT */
 
 .product-section{
-padding:60px 8%;
+padding:50px 8%;
 display:flex;
 gap:50px;
 flex-wrap:wrap;
-align-items:flex-start;
 }
 
 .product-left{
@@ -94,18 +87,20 @@ box-shadow:0 0 20px rgba(0,0,0,0.1);
 
 #studentPreview{
 position:absolute;
-top:70px;
-left:40px;
-width:260px;
-height:260px;
+top:80px;
+left:45px;
+width:230px;
+height:230px;
 object-fit:cover;
 display:none;
-border-radius:18px;
+border-radius:20px;
 border:5px solid white;
 box-shadow:0 0 20px rgba(0,0,0,0.4);
 background:white;
 z-index:10;
 }
+
+/* LIVE NAME */
 
 #liveStudentName{
 position:absolute;
@@ -129,8 +124,8 @@ flex-wrap:wrap;
 }
 
 .thumb{
-width:85px;
-height:85px;
+width:90px;
+height:90px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
@@ -145,64 +140,37 @@ transform:scale(1.05);
 }
 
 .active-thumb{
-border:3px solid #111;
+border:3px solid black;
 }
 
-/* TITLE */
+/* RIGHT */
 
 .product-title{
-font-size:42px;
+font-size:45px;
 margin-bottom:20px;
 }
 
 .price{
-font-size:38px;
+font-size:42px;
 font-weight:bold;
 color:#ff4081;
 margin-bottom:25px;
 }
 
-/* MODEL BUTTONS */
+/* BUTTONS */
 
-.model-buttons{
+.model-buttons,
+.options{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
 margin-bottom:25px;
 }
 
-.model-btn{
+.model-btn,
+.option-btn{
 padding:12px 20px;
 border:none;
-background:#eee;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
-}
-
-.model-btn:hover{
-background:#111;
-color:white;
-}
-
-.active-model{
-background:#111;
-color:white;
-}
-
-/* OPTIONS */
-
-.options{
-display:flex;
-gap:15px;
-margin:25px 0;
-flex-wrap:wrap;
-}
-
-.option-btn{
-padding:14px 25px;
-border:none;
 border-radius:10px;
 background:#eee;
 cursor:pointer;
@@ -210,11 +178,13 @@ font-weight:bold;
 transition:0.3s;
 }
 
+.model-btn:hover,
 .option-btn:hover{
 background:#111;
 color:white;
 }
 
+.active-model,
 .active-option{
 background:#111;
 color:white;
@@ -255,7 +225,7 @@ margin-top:30px;
 font-weight:bold;
 }
 
-/* CROPPER */
+/* EDITOR */
 
 #editorBox{
 display:none;
@@ -281,76 +251,12 @@ margin-top:15px;
 font-weight:bold;
 }
 
-/* CART */
-
-#cartBtn{
-position:fixed;
-top:20px;
-right:20px;
-background:#111;
-color:white;
-border:none;
-padding:14px 20px;
-border-radius:40px;
-font-size:16px;
-cursor:pointer;
-z-index:999;
-}
-
-#cartSidebar{
-position:fixed;
-top:0;
-right:-400px;
-width:350px;
-height:100%;
-background:white;
-box-shadow:-5px 0 20px rgba(0,0,0,0.2);
-transition:0.4s;
-padding:20px;
-z-index:1000;
-overflow:auto;
-}
-
-.cart-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.cart-item{
-padding:15px 0;
-border-bottom:1px solid #ddd;
-}
-
-.remove-btn{
-margin-top:10px;
-padding:8px 14px;
-border:none;
-background:red;
-color:white;
-border-radius:10px;
-cursor:pointer;
-}
-
-.orderBtn{
-width:100%;
-background:#25D366;
-color:white;
-border:none;
-padding:15px;
-border-radius:12px;
-font-size:18px;
-cursor:pointer;
-margin-top:20px;
-}
-
 /* MOBILE */
 
 @media(max-width:768px){
 
 .product-section{
-padding:30px 20px;
+padding:25px;
 }
 
 .product-title{
@@ -365,21 +271,17 @@ nav ul{
 display:none;
 }
 
-#cartSidebar{
-width:100%;
-}
-
 #studentPreview{
-width:100px;
-height:100px;
-top:75px;
+width:140px;
+height:140px;
+top:60px;
 left:20px;
 }
 
 #liveStudentName{
-font-size:18px;
-top:15px;
-right:20px;
+font-size:22px;
+top:10px;
+right:15px;
 }
 
 }
@@ -407,39 +309,7 @@ SnapKart 🚀
 
 </nav>
 
-<!-- CART BUTTON -->
-
-<button id="cartBtn" onclick="openCart()">
-🛒 Cart (<span id="cartCount">0</span>)
-</button>
-
-<!-- CART -->
-
-<div id="cartSidebar">
-
-<div class="cart-header">
-
-<h2>Your Cart</h2>
-
-<button onclick="closeCart()">✖</button>
-
-</div>
-
-<div id="cartItems"></div>
-
-<h3>Total: ₹<span id="cartTotal">0</span></h3>
-
-<a id="whatsappOrder" target="_blank">
-
-<button class="orderBtn">
-Order on WhatsApp 📲
-</button>
-
-</a>
-
-</div>
-
-<!-- PRODUCT SECTION -->
+<!-- PRODUCT -->
 
 <section class="product-section">
 
@@ -459,7 +329,7 @@ src="images/book-labels/Spiderman.webp">
 <!-- LIVE NAME -->
 
 <h2 id="liveStudentName">
-Name of Student
+Name
 </h2>
 
 </div>
@@ -602,11 +472,7 @@ placeholder="Enter School Name">
 
 </div>
 
-<button class="buy-btn"
-onclick="addToCart(
-'Customized School Labels',
-parseInt(document.getElementById('productPrice').innerText)
-)">
+<button class="buy-btn">
 Add To Cart 🛒
 </button>
 
@@ -623,8 +489,6 @@ function changeImage(element,name){
 document.getElementById("mainProductImage").src =
 element.src;
 
-/* ACTIVE THUMB */
-
 document.querySelectorAll(".thumb").forEach((img)=>{
 
 img.classList.remove("active-thumb");
@@ -632,8 +496,6 @@ img.classList.remove("active-thumb");
 });
 
 element.classList.add("active-thumb");
-
-/* ACTIVE MODEL BUTTON */
 
 document.querySelectorAll(".model-btn").forEach((btn)=>{
 
@@ -649,7 +511,7 @@ btn.classList.add("active-model");
 
 }
 
-/* MODEL BUTTON CLICK */
+/* BUTTON CLICK */
 
 function clickThumb(index){
 
@@ -657,7 +519,7 @@ document.querySelectorAll(".thumb")[index].click();
 
 }
 
-/* PRICE CHANGE */
+/* PRICE */
 
 function changePrice(price,button){
 
@@ -671,104 +533,6 @@ btn.classList.remove("active-option");
 });
 
 button.classList.add("active-option");
-
-}
-
-/* CART */
-
-let cart = [];
-
-function addToCart(product, price){
-
-cart.push({
-product,
-price
-});
-
-updateCart();
-
-openCart();
-
-}
-
-function updateCart(){
-
-let cartItems =
-document.getElementById("cartItems");
-
-let cartCount =
-document.getElementById("cartCount");
-
-let cartTotal =
-document.getElementById("cartTotal");
-
-cartItems.innerHTML = "";
-
-let total = 0;
-
-cart.forEach((item,index)=>{
-
-total += item.price;
-
-cartItems.innerHTML += `
-
-<div class="cart-item">
-
-<h4>${item.product}</h4>
-
-<p>₹${item.price}</p>
-
-<button class="remove-btn"
-onclick="removeItem(${index})">
-Remove
-</button>
-
-</div>
-
-`;
-
-});
-
-cartCount.innerText = cart.length;
-
-cartTotal.innerText = total;
-
-let message =
-"Hello SnapKart 👋%0A%0A";
-
-cart.forEach((item)=>{
-
-message +=
-`🛒 ${item.product} - ₹${item.price}%0A`;
-
-});
-
-message += `%0ATotal: ₹${total}`;
-
-document.getElementById("whatsappOrder").href =
-`https://wa.me/919848830202?text=${message}`;
-
-}
-
-function removeItem(index){
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-function openCart(){
-
-document.getElementById("cartSidebar").style.right =
-"0";
-
-}
-
-function closeCart(){
-
-document.getElementById("cartSidebar").style.right =
-"-400px";
 
 }
 
@@ -805,11 +569,11 @@ cropper.destroy();
 
 cropper = new Cropper(image, {
 
-aspectRatio: 1,
-viewMode: 1,
-dragMode: 'move',
-autoCropArea: 1,
-responsive: true
+aspectRatio:1,
+viewMode:1,
+dragMode:'move',
+autoCropArea:1,
+responsive:true
 
 });
 
@@ -821,13 +585,15 @@ reader.readAsDataURL(file);
 
 });
 
+/* APPLY PHOTO */
+
 function applyPhoto(){
 
 const canvas =
 cropper.getCroppedCanvas({
 
-width:500,
-height:500
+width:700,
+height:700
 
 });
 
@@ -837,8 +603,6 @@ document.getElementById("studentPreview");
 preview.src = canvas.toDataURL();
 
 preview.style.display = "block";
-
-/* HIDE EDITOR */
 
 document.getElementById("editorBox").style.display =
 "none";
@@ -855,7 +619,7 @@ studentNameInput.addEventListener("input", function(){
 if(this.value === ""){
 
 document.getElementById("liveStudentName").innerText =
-"Name of Student";
+"Name";
 
 }else{
 
