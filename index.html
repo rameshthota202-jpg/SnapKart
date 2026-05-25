@@ -414,10 +414,6 @@ onclick="changeImage(this,'Shinchan')">
 class="thumb"
 onclick="changeImage(this,'Rocket')">
 
-<img src="images/book-labels/SchoolBus.webp"
-class="thumb"
-onclick="changeImage(this,'School Bus')">
-
 </div>
 
 </div>
@@ -458,10 +454,6 @@ Doraemon
 Ironman
 </button>
 
-<button class="model-btn">
-School Bus
-</button>
-
 </div>
 
 <h3>Paper Quality:</h3>
@@ -484,7 +476,7 @@ Waterproof
 
 <label>Upload Photo</label>
 
-<input type="file">
+<input type="file" id="photoUpload">
 
 </div>
 
@@ -655,6 +647,32 @@ document.getElementById("cartSidebar").style.right =
 "-400px";
 
 }
+
+/* LIVE PHOTO PREVIEW */
+
+const photoInput =
+document.getElementById("photoUpload");
+
+photoInput.addEventListener("change", function(){
+
+const file = this.files[0];
+
+if(file){
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+document.getElementById("mainProductImage").src =
+e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+});
 
 </script>
 
