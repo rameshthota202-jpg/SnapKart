@@ -4,232 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SnapKart Premium</title>
+<title>SnapKart</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f5f5f5;
-}
-
-/* HEADER */
-
-header{
-background:white;
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-size:38px;
-font-weight:700;
-color:#111;
-}
-
-.logo span{
-color:#ff2e63;
-}
-
-nav{
-display:flex;
-gap:30px;
-}
-
-nav a{
-text-decoration:none;
-color:#111;
-font-weight:600;
-}
-
-/* HERO */
-
-.hero{
-width:100%;
-padding:20px;
-}
-
-.hero img{
-width:100%;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-/* CATEGORIES */
-
-.categories{
-padding:40px 20px;
-}
-
-.categories h2{
-text-align:center;
-margin-bottom:30px;
-font-size:35px;
-}
-
-.category-scroll{
-display:flex;
-gap:25px;
-overflow-x:auto;
-white-space:nowrap;
-scroll-behavior:smooth;
-padding-bottom:10px;
-}
-
-.category-scroll::-webkit-scrollbar{
-display:none;
-}
-
-.cat-card{
-min-width:150px;
-text-align:center;
-text-decoration:none;
-color:#111;
-}
-
-.cat-card img{
-width:140px;
-height:140px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid white;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
-transition:0.4s;
-}
-
-.cat-card img:hover{
-transform:scale(1.08);
-}
-
-.cat-card p{
-margin-top:12px;
-font-weight:700;
-font-size:18px;
-}
-
-/* PRODUCTS */
-
-.products{
-padding:40px 20px;
-}
-
-.products h2{
-text-align:center;
-font-size:40px;
-margin-bottom:40px;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.product-card{
-background:white;
-border-radius:20px;
-overflow:hidden;
-text-decoration:none;
-color:#111;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.4s;
-}
-
-.product-card:hover{
-transform:translateY(-10px);
-}
-
-.product-card img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.product-card h3{
-padding:15px 15px 5px;
-font-size:24px;
-}
-
-.product-card p{
-padding:0 15px 20px;
-color:#666;
-}
-
-/* FOOTER */
-
-footer{
-margin-top:60px;
-background:#111;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-header{
-padding:15px 20px;
-flex-direction:column;
-gap:15px;
-}
-
-.logo{
-font-size:30px;
-}
-
-nav{
-gap:15px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero{
-padding:10px;
-}
-
-.hero img{
-border-radius:15px;
-}
-
-.categories h2,
-.products h2{
-font-size:28px;
-}
-
-.cat-card{
-min-width:120px;
-}
-
-.cat-card img{
-width:110px;
-height:110px;
-}
-
-.product-card img{
-height:250px;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
 
 <header>
@@ -247,15 +29,11 @@ Snap<span>Kart 🚀</span>
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<img src="images/snapkart banner.png">
+<img src="snapkart banner.png">
 
 </section>
-
-<!-- CATEGORIES -->
 
 <section class="categories">
 
@@ -263,36 +41,29 @@ Snap<span>Kart 🚀</span>
 
 <div class="category-scroll">
 
-<a href="#" class="cat-card">
-<img src="images/book-labels/Barbie_School_Books_Lables.webp">
+<div class="cat-card">
+<img src="images/book-labels/Barbie.webp">
 <p>Book Labels</p>
-</a>
+</div>
 
-<a href="#" class="cat-card">
-<img src="images/ACRYLIC PHOTO FRAMES/acrylic_photo-frame.webp.webp">
+<div class="cat-card">
+<img src="images/ACRYLIC PHOTO FRAMES/acrylic_love_shape-frame.webp.webp">
 <p>Acrylic Frames</p>
-</a>
+</div>
 
-<a href="#" class="cat-card">
-<img src="images/ID CARDS/blue Metal ID Card Holder Aluminium Card Holder ID Card Badge.png">
-<p>ID Cards</p>
-</a>
-
-<a href="#" class="cat-card">
+<div class="cat-card">
 <img src="images/Lord Balaji Acrylic Photo Frame/bodle_1-frame.webp.webp">
 <p>God Frames</p>
-</a>
+</div>
 
-<a href="#" class="cat-card">
-<img src="images/Telugu Wedding Welcome Board/telugu-wedding-welcome-board.webp">
-<p>Wedding Boards</p>
-</a>
+<div class="cat-card">
+<img src="images/ID CARDS/Blue Metal ID Card Holder Aluminium Card Holder ID Card Badge.png">
+<p>ID Cards</p>
+</div>
 
 </div>
 
 </section>
-
-<!-- PRODUCTS -->
 
 <section class="products">
 
@@ -300,80 +71,72 @@ Snap<span>Kart 🚀</span>
 
 <div class="product-grid">
 
-<a href="#" class="product-card">
-<img src="images/book-labels/Barbie_School_Books_Lables.webp">
+<div class="product-card">
+
+<img src="images/book-labels/Barbie.webp">
+
+<div class="product-info">
+
 <h3>Book Labels</h3>
-<p>Customized School Labels</p>
-</a>
 
-<a href="#" class="product-card">
-<img src="images/ACRYLIC PHOTO FRAMES/acrylic_photo-frame.webp.webp">
-<h3>Acrylic Frames</h3>
-<p>Premium Acrylic Frames</p>
-</a>
+<div class="price">₹99</div>
 
-<a href="#" class="product-card">
-<img src="images/ID CARDS/blue Metal ID Card Holder Aluminium Card Holder ID Card Badge.png">
-<h3>ID Cards</h3>
-<p>School & Office ID Cards</p>
-</a>
+<button class="buy-btn"
+onclick="window.location.href='product.html'">
 
-<a href="#" class="product-card">
+Customize Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="images/ACRYLIC PHOTO FRAMES/acrylic_love_shape-frame.webp.webp">
+
+<div class="product-info">
+
+<h3>Acrylic Photo Frame</h3>
+
+<div class="price">₹499</div>
+
+<button class="buy-btn"
+onclick="window.location.href='product.html'">
+
+Order Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
 <img src="images/Lord Balaji Acrylic Photo Frame/bodle_1-frame.webp.webp">
-<h3>God Frames</h3>
-<p>Temple Acrylic Frames</p>
-</a>
 
-<a href="#" class="product-card">
-<img src="images/Telugu Wedding Welcome Board/telugu-wedding-welcome-board.webp">
-<h3>Wedding Boards</h3>
-<p>Customized Welcome Boards</p>
-</a>
+<div class="product-info">
+
+<h3>God Acrylic Frame</h3>
+
+<div class="price">₹799</div>
+
+<button class="buy-btn"
+onclick="window.location.href='product.html'">
+
+Order Now
+
+</button>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
-
-<footer>
-
-<h2>SnapKart 🚀</h2>
-
-<p>
-Custom Gifts • Book Labels • Acrylic Frames • Logo Stickers
-</p>
-
-<br>
-
-<p>
-© 2026 SnapKart. All Rights Reserved.
-</p>
-
-</footer>
-
-<script>
-
-const slider = document.querySelector(".category-scroll");
-
-let scrollAmount = 0;
-
-setInterval(()=>{
-
-scrollAmount += 1;
-
-slider.scrollLeft = scrollAmount;
-
-if(
-scrollAmount >=
-slider.scrollWidth - slider.clientWidth
-){
-
-scrollAmount = 0;
-
-}
-
-},5);
-
-</script>
 
 </body>
 </html>
