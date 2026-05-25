@@ -6,16 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SnapKart Ultimate</title>
-
-<!-- CROPPER CSS -->
-
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"
-/>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+<title>SnapKart Premium</title>
 
 <style>
 
@@ -48,6 +39,7 @@ z-index:1000;
 .logo{
 font-size:32px;
 font-weight:bold;
+color:#111;
 }
 
 nav ul{
@@ -79,6 +71,8 @@ flex:1;
 min-width:320px;
 }
 
+/* LABEL AREA */
+
 .label-box{
 position:relative;
 width:100%;
@@ -94,8 +88,8 @@ box-shadow:0 0 20px rgba(0,0,0,0.1);
 
 #studentPreview{
 position:absolute;
-top:120px;
-left:40px;
+bottom:35px;
+right:30px;
 width:120px;
 height:120px;
 object-fit:cover;
@@ -252,33 +246,6 @@ transition:0.3s;
 transform:scale(1.03);
 }
 
-/* CROPPER */
-
-#editorBox{
-margin-top:20px;
-display:none;
-background:white;
-padding:15px;
-border-radius:20px;
-box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-
-#cropImage{
-max-width:100%;
-border-radius:15px;
-}
-
-.apply-btn{
-padding:14px 20px;
-background:#111;
-color:white;
-border:none;
-border-radius:12px;
-cursor:pointer;
-margin-top:15px;
-font-weight:bold;
-}
-
 /* CART BUTTON */
 
 #cartBtn{
@@ -293,6 +260,7 @@ border-radius:40px;
 font-size:16px;
 cursor:pointer;
 z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* CART SIDEBAR */
@@ -376,8 +344,8 @@ width:100%;
 #studentPreview{
 width:90px;
 height:90px;
-top:90px;
-left:25px;
+right:20px;
+bottom:20px;
 }
 
 }
@@ -552,21 +520,6 @@ Waterproof
 
 </div>
 
-<!-- CROPPER -->
-
-<div id="editorBox">
-
-<img id="cropImage">
-
-<br>
-
-<button class="apply-btn"
-onclick="applyPhoto()">
-Apply Photo ✅
-</button>
-
-</div>
-
 <div class="input-box">
 
 <label>Student Name</label>
@@ -612,7 +565,7 @@ img.classList.remove("active-thumb");
 
 element.classList.add("active-thumb");
 
-document.querySelectorAll(".model-btn").forEach((btn")=>{
+document.querySelectorAll(".model-btn").forEach((btn)=>{
 btn.classList.remove("active-model");
 
 if(btn.innerText === name){
@@ -735,48 +688,27 @@ document.getElementById("cartSidebar").style.right =
 
 }
 
-/* CROPPER */
-
-let cropper;
+/* LIVE PHOTO PREVIEW */
 
 const photoInput =
 document.getElementById("photoUpload");
 
-photoInput.addEventListener("change", function(e){
+photoInput.addEventListener("change", function(){
 
-const file = e.target.files[0];
+const file = this.files[0];
 
 if(file){
 
 const reader = new FileReader();
 
-reader.onload = function(event){
+reader.onload = function(e){
 
-document.getElementById("editorBox").style.display =
-"block";
+const preview =
+document.getElementById("studentPreview");
 
-const image =
-document.getElementById("cropImage");
+preview.src = e.target.result;
 
-image.src = event.target.result;
-
-if(cropper){
-cropper.destroy();
-}
-
-cropper = new Cropper(image, {
-
-aspectRatio: 1,
-
-viewMode: 1,
-
-dragMode: 'move',
-
-autoCropArea: 1,
-
-responsive: true
-
-});
+preview.style.display = "block";
 
 };
 
@@ -786,26 +718,8 @@ reader.readAsDataURL(file);
 
 });
 
-function applyPhoto(){
-
-const canvas =
-cropper.getCroppedCanvas({
-
-width:200,
-height:200
-
-});
-
-const preview =
-document.getElementById("studentPreview");
-
-preview.src = canvas.toDataURL();
-
-preview.style.display = "block";
-
-}
-
 </script>
 
 </body>
+
 </html>
