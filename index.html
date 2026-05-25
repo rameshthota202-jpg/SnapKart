@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SnapKart Premium</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
 <style>
 
@@ -39,7 +43,6 @@ z-index:1000;
 .logo{
 font-size:32px;
 font-weight:bold;
-color:#111;
 }
 
 nav ul{
@@ -64,14 +67,17 @@ flex-wrap:wrap;
 align-items:flex-start;
 }
 
-/* LEFT */
-
 .product-left{
 flex:1;
 min-width:320px;
 }
 
-/* LABEL AREA */
+.product-right{
+flex:1;
+min-width:320px;
+}
+
+/* LABEL */
 
 .label-box{
 position:relative;
@@ -88,12 +94,12 @@ box-shadow:0 0 20px rgba(0,0,0,0.1);
 
 #studentPreview{
 position:absolute;
-bottom:35px;
-right:30px;
+top:130px;
+left:35px;
 width:120px;
 height:120px;
 object-fit:cover;
-border-radius:12px;
+border-radius:10px;
 display:none;
 border:4px solid white;
 box-shadow:0 0 15px rgba(0,0,0,0.3);
@@ -113,12 +119,12 @@ flex-wrap:wrap;
 width:85px;
 height:85px;
 object-fit:cover;
-border-radius:12px;
+border-radius:10px;
 cursor:pointer;
 border:3px solid transparent;
-transition:0.3s;
+padding:3px;
 background:white;
-padding:4px;
+transition:0.3s;
 }
 
 .thumb:hover{
@@ -129,15 +135,10 @@ transform:scale(1.05);
 border:3px solid #111;
 }
 
-/* RIGHT */
-
-.product-right{
-flex:1;
-min-width:320px;
-}
+/* TITLE */
 
 .product-title{
-font-size:45px;
+font-size:42px;
 margin-bottom:20px;
 }
 
@@ -161,7 +162,7 @@ margin-bottom:25px;
 padding:12px 20px;
 border:none;
 background:#eee;
-border-radius:12px;
+border-radius:10px;
 cursor:pointer;
 font-weight:bold;
 transition:0.3s;
@@ -189,10 +190,10 @@ flex-wrap:wrap;
 .option-btn{
 padding:14px 25px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 background:#eee;
-font-weight:bold;
 cursor:pointer;
+font-weight:bold;
 transition:0.3s;
 }
 
@@ -206,7 +207,7 @@ background:#111;
 color:white;
 }
 
-/* INPUTS */
+/* INPUT */
 
 .input-box{
 margin-top:20px;
@@ -221,7 +222,7 @@ font-weight:bold;
 .input-box input{
 width:100%;
 padding:14px;
-border-radius:12px;
+border-radius:10px;
 border:1px solid #ccc;
 font-size:16px;
 }
@@ -239,14 +240,35 @@ border-radius:15px;
 cursor:pointer;
 margin-top:30px;
 font-weight:bold;
-transition:0.3s;
 }
 
-.buy-btn:hover{
-transform:scale(1.03);
+/* CROPPER */
+
+#editorBox{
+display:none;
+margin-top:20px;
+background:white;
+padding:15px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
 }
 
-/* CART BUTTON */
+#cropImage{
+max-width:100%;
+}
+
+.apply-btn{
+padding:14px 20px;
+background:#111;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+font-weight:bold;
+}
+
+/* CART */
 
 #cartBtn{
 position:fixed;
@@ -260,10 +282,7 @@ border-radius:40px;
 font-size:16px;
 cursor:pointer;
 z-index:999;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
-
-/* CART SIDEBAR */
 
 #cartSidebar{
 position:fixed;
@@ -329,10 +348,6 @@ font-size:32px;
 font-size:30px;
 }
 
-nav{
-padding:15px 20px;
-}
-
 nav ul{
 display:none;
 }
@@ -342,10 +357,10 @@ width:100%;
 }
 
 #studentPreview{
-width:90px;
-height:90px;
-right:20px;
-bottom:20px;
+width:85px;
+height:85px;
+top:95px;
+left:20px;
 }
 
 }
@@ -393,9 +408,7 @@ SnapKart 🚀
 
 <div id="cartItems"></div>
 
-<h3>
-Total: ₹<span id="cartTotal">0</span>
-</h3>
+<h3>Total: ₹<span id="cartTotal">0</span></h3>
 
 <a id="whatsappOrder" target="_blank">
 
@@ -420,9 +433,7 @@ Order on WhatsApp 📲
 <img id="mainProductImage"
 src="images/book-labels/Spiderman.webp">
 
-<!-- LIVE PHOTO -->
-
-<img id="studentPreview" src="">
+<img id="studentPreview">
 
 </div>
 
@@ -474,24 +485,34 @@ School Books Label with Customized Photo
 
 <div class="model-buttons">
 
-<button class="model-btn active-model">
+<button class="model-btn active-model"
+onclick="clickThumb(0)">
 Spiderman
 </button>
 
-<button class="model-btn">
+<button class="model-btn"
+onclick="clickThumb(1)">
 Barbie
 </button>
 
-<button class="model-btn">
-Rocket
-</button>
-
-<button class="model-btn">
+<button class="model-btn"
+onclick="clickThumb(2)">
 Doraemon
 </button>
 
-<button class="model-btn">
+<button class="model-btn"
+onclick="clickThumb(3)">
 Ironman
+</button>
+
+<button class="model-btn"
+onclick="clickThumb(4)">
+Shinchan
+</button>
+
+<button class="model-btn"
+onclick="clickThumb(5)">
+Rocket
 </button>
 
 </div>
@@ -517,6 +538,21 @@ Waterproof
 <label>Upload Photo</label>
 
 <input type="file" id="photoUpload">
+
+</div>
+
+<!-- CROPPER -->
+
+<div id="editorBox">
+
+<img id="cropImage">
+
+<br>
+
+<button class="apply-btn"
+onclick="applyPhoto()">
+Apply Photo ✅
+</button>
 
 </div>
 
@@ -559,20 +595,37 @@ function changeImage(element,name){
 document.getElementById("mainProductImage").src =
 element.src;
 
+/* ACTIVE THUMB */
+
 document.querySelectorAll(".thumb").forEach((img)=>{
+
 img.classList.remove("active-thumb");
+
 });
 
 element.classList.add("active-thumb");
 
+/* ACTIVE MODEL BUTTON */
+
 document.querySelectorAll(".model-btn").forEach((btn)=>{
+
 btn.classList.remove("active-model");
 
-if(btn.innerText === name){
+if(btn.innerText.trim() === name.trim()){
+
 btn.classList.add("active-model");
+
 }
 
 });
+
+}
+
+/* MODEL BUTTON CLICK */
+
+function clickThumb(index){
+
+document.querySelectorAll(".thumb")[index].click();
 
 }
 
@@ -584,7 +637,9 @@ document.getElementById("productPrice").innerText =
 price;
 
 document.querySelectorAll(".option-btn").forEach((btn)=>{
+
 btn.classList.remove("active-option");
+
 });
 
 button.classList.add("active-option");
@@ -647,6 +702,7 @@ Remove
 });
 
 cartCount.innerText = cart.length;
+
 cartTotal.innerText = total;
 
 let message =
@@ -688,27 +744,46 @@ document.getElementById("cartSidebar").style.right =
 
 }
 
-/* LIVE PHOTO PREVIEW */
+/* CROPPER */
+
+let cropper;
 
 const photoInput =
 document.getElementById("photoUpload");
 
-photoInput.addEventListener("change", function(){
+photoInput.addEventListener("change", function(e){
 
-const file = this.files[0];
+const file = e.target.files[0];
 
 if(file){
 
 const reader = new FileReader();
 
-reader.onload = function(e){
+reader.onload = function(event){
 
-const preview =
-document.getElementById("studentPreview");
+document.getElementById("editorBox").style.display =
+"block";
 
-preview.src = e.target.result;
+const image =
+document.getElementById("cropImage");
 
-preview.style.display = "block";
+image.src = event.target.result;
+
+if(cropper){
+
+cropper.destroy();
+
+}
+
+cropper = new Cropper(image, {
+
+aspectRatio: 1,
+viewMode: 1,
+dragMode: 'move',
+autoCropArea: 1,
+responsive: true
+
+});
 
 };
 
@@ -718,8 +793,29 @@ reader.readAsDataURL(file);
 
 });
 
+function applyPhoto(){
+
+const canvas =
+cropper.getCroppedCanvas({
+
+width:200,
+height:200
+
+});
+
+const preview =
+document.getElementById("studentPreview");
+
+preview.src = canvas.toDataURL();
+
+preview.style.display = "block";
+
+document.getElementById("editorBox").style.display =
+"none";
+
+}
+
 </script>
 
 </body>
-
 </html>
