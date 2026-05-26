@@ -93,183 +93,113 @@ cursor:pointer;
 font-weight:600;
 }
 
-.hero-image img{
-width:100%;
-border-radius:25px;
+/* TOP CATEGORIES */
+
+.categories-section{
+padding:80px 5%;
+text-align:center;
 }
 
-/* SECTION TITLE */
-
-.section-title{
-text-align:center;
-font-size:42px;
-margin-top:50px;
+.categories-section h2{
+font-size:50px;
 margin-bottom:50px;
 }
 
-/* CATEGORIES */
-
-.categories{
+.category-grid{
 display:flex;
 justify-content:center;
-gap:40px;
+gap:35px;
 flex-wrap:wrap;
-padding:0 5%;
-margin-bottom:80px;
 }
 
-.cat{
+.category-card{
+text-decoration:none;
+color:#111;
+transition:0.3s;
+}
+
+.category-card img{
+width:170px;
+height:170px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid #ff2e73;
+transition:0.3s;
+}
+
+.category-card img:hover{
+transform:scale(1.08);
+}
+
+.category-card p{
+margin-top:15px;
+font-size:24px;
+font-weight:700;
+}
+
+/* TRENDING PRODUCTS */
+
+.trending{
+padding:80px 5%;
 text-align:center;
 }
 
-.cat img{
-width:140px;
-height:140px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #ff2e73;
-margin-bottom:15px;
+.trending h2{
+font-size:50px;
+margin-bottom:50px;
 }
 
-.cat h3{
-font-size:20px;
-}
-
-/* PRODUCTS */
-
-.products{
+.product-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-padding:0 5%;
-margin-bottom:100px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .product-card{
 background:white;
+padding:20px;
 border-radius:25px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+text-decoration:none;
+color:black;
+transition:0.3s;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.product-card:hover{
+transform:translateY(-10px);
 }
 
 .product-card img{
 width:100%;
-height:300px;
+height:250px;
 object-fit:cover;
+border-radius:20px;
 }
 
-.product-info{
-padding:25px;
+.product-card h3{
+font-size:26px;
+margin-top:15px;
 }
 
-.product-info h3{
-font-size:28px;
-margin-bottom:15px;
-}
-
-.price{
-font-size:32px;
-font-weight:700;
+.product-card p{
+font-size:22px;
+font-weight:bold;
 color:#ff2e73;
-margin-bottom:20px;
+margin:10px 0 20px;
 }
 
-.quality-buttons{
-display:flex;
-gap:10px;
-margin-bottom:20px;
-}
-
-.quality-buttons button{
-flex:1;
-padding:12px;
+.product-card button{
+padding:14px 24px;
 border:none;
 border-radius:12px;
-cursor:pointer;
-font-weight:600;
-}
-
-.normal-btn{
-background:#eee;
-}
-
-.waterproof-btn{
-background:#111;
-color:white;
-}
-
-.preview{
-width:100%;
-height:220px;
-background:#f1f1f1;
-border-radius:15px;
-overflow:hidden;
-margin-bottom:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.preview img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:none;
-}
-
-.upload-box{
-margin-bottom:20px;
-}
-
-.upload-box input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:12px;
-}
-
-.custom-input{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid #ddd;
-margin-bottom:15px;
-font-size:16px;
-}
-
-.buy-btn{
-width:100%;
-padding:16px;
-background:#25d366;
-border:none;
-border-radius:15px;
+background:#ff2e73;
 color:white;
 font-size:18px;
-font-weight:700;
+font-weight:bold;
 cursor:pointer;
 }
 
-  .variant-group{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-bottom:10px;
-}
-
-.variant-btn{
-padding:12px 18px;
-border:none;
-border-radius:12px;
-background:#eee;
-cursor:pointer;
-font-weight:600;
-transition:0.3s;
-}
-
-.variant-btn.active{
-background:#111;
-color:white;
-}
 /* FOOTER */
 
 footer{
@@ -277,6 +207,7 @@ background:#111;
 color:white;
 padding:60px 5%;
 text-align:center;
+margin-top:80px;
 }
 
 /* MOBILE */
@@ -288,24 +219,21 @@ grid-template-columns:1fr;
 }
 
 .hero-text h1{
-font-size:42px;
+font-size:40px;
 }
 
 nav{
 display:none;
 }
 
-.section-title{
-font-size:34px;
+.categories-section h2,
+.trending h2{
+font-size:38px;
 }
 
-.categories{
-gap:25px;
-}
-
-.cat img{
-width:110px;
-height:110px;
+.category-card img{
+width:120px;
+height:120px;
 }
 
 }
@@ -329,6 +257,8 @@ height:110px;
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-text">
@@ -350,223 +280,107 @@ Shop Now
 </div>
 
 <div class="hero-image">
-    <img src="images/banner.png" alt="SnapKart Banner">
+
+<img src="images/banner.png"
+style="width:100%; border-radius:25px;">
+
 </div>
 
 </section>
 
-<h2 class="section-title">
-Top Categories
-</h2>
+<!-- TOP CATEGORIES -->
 
-<section class="categories">
+<section class="categories-section">
 
-<div class="cat">
-<img src="images/book-labels/Astronaut.webp>
-<h3>Book Labels</h3>
-</div>
+<h2>Top Categories</h2>
 
-<div class="cat">
+<div class="category-grid">
+
+<a href="product.html" class="category-card">
+
 <img src="images/book-labels/Barbie.webp">
-<h3>Acrylic Frames</h3>
-</div>
 
-<div class="cat">
+<p>Book Labels</p>
+
+</a>
+
+<a href="#" class="category-card">
+
 <img src="images/book-labels/Doraemon.webp">
+
+<p>Mug Printing</p>
+
+</a>
+
+<a href="#" class="category-card">
+
+<img src="images/book-labels/Shinchan.webp">
+
+<p>Logo Stickers</p>
+
+</a>
+
+<a href="#" class="category-card">
+
+<img src="images/book-labels/Spiderman.webp">
+
+<p>Acrylic Frames</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- TRENDING PRODUCTS -->
+
+<section class="trending">
+
+<h2>Trending Products</h2>
+
+<div class="product-grid">
+
+<a href="product.html" class="product-card">
+
+<img src="images/book-labels/Barbie.webp">
+
+<h3>Customized Book Labels</h3>
+
+<p>Starting ₹99</p>
+
+<button>Customize Now</button>
+
+</a>
+
+<a href="#" class="product-card">
+
+<img src="images/book-labels/Doraemon.webp">
+
 <h3>Mug Printing</h3>
-</div>
 
-<div class="cat">
-<img src="images/book-labels/Durga.webp">
+<p>Starting ₹199</p>
+
+<button>Shop Now</button>
+
+</a>
+
+<a href="#" class="product-card">
+
+<img src="images/book-labels/Shinchan.webp">
+
 <h3>Logo Stickers</h3>
-</div>
 
-</section>
+<p>Starting ₹149</p>
 
-<h2 class="section-title">
-Trending Products
-</h2>
+<button>Shop Now</button>
 
-<section class="products">
-
-<!-- PRODUCT CARD -->
-
-<div class="product-card">
-
-<img id="mainProductImage"
-src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-
-<h3>Acrylic Photo Frame</h3>
-
-<div class="price" id="productPrice">
-₹599
-</div>
-
-<!-- MODEL OPTIONS -->
-
-<h4 style="margin-bottom:10px;">Choose Model</h4>
-
-<div class="variant-group">
-
-<button class="variant-btn active"
-onclick="selectVariant(this)">
-MODEL 1
-</button>
-
-<button class="variant-btn"
-onclick="selectVariant(this)">
-MODEL 2
-</button>
-
-<button class="variant-btn"
-onclick="selectVariant(this)">
-MODEL 3
-</button>
-
-<button class="variant-btn"
-onclick="selectVariant(this)">
-MODEL 4
-</button>
-
-</div>
-
-<!-- SIZE OPTIONS -->
-
-<h4 style="margin-top:20px;margin-bottom:10px;">
-Choose Size
-</h4>
-
-<div class="variant-group">
-
-<button class="variant-btn active"
-onclick="changeProductPrice(this,599)">
-A4
-</button>
-
-<button class="variant-btn"
-onclick="changeProductPrice(this,1299)">
-1x1.5 Feet
-</button>
-
-<button class="variant-btn"
-onclick="changeProductPrice(this,2499)">
-2x3 Feet
-</button>
-
-<button class="variant-btn"
-onclick="changeProductPrice(this,4999)">
-3x4 Feet
-</button>
-
-</div>
-
-<!-- THICKNESS -->
-
-<h4 style="margin-top:20px;margin-bottom:10px;">
-Thickness
-</h4>
-
-<div class="variant-group">
-
-<button class="variant-btn active"
-onclick="selectVariant(this)">
-3mm
-</button>
-
-<button class="variant-btn"
-onclick="selectVariant(this)">
-5mm
-</button>
-
-<button class="variant-btn"
-onclick="selectVariant(this)">
-8mm
-</button>
-
-</div>
-
-<!-- IMAGE PREVIEW -->
-
-<div class="preview">
-<img id="preview2">
-</div>
-
-<div class="upload-box">
-
-<input type="file"
-accept="image/*"
-onchange="previewImage(event,'preview2')">
-
-</div>
-
-<!-- CUSTOM NAME -->
-
-<input type="text"
-class="custom-input"
-placeholder="Enter Name">
-
-<!-- WHATSAPP -->
-
-<button class="buy-btn"
-onclick="window.open('https://wa.me/919848830202?text=I want Acrylic Photo Frame')">
-
-Order on WhatsApp
-
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 2 -->
-
-<div class="product-card">
-
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-
-<div class="product-info">
-
-<h3>Acrylic Photo Frame</h3>
-
-<div class="price">
-₹599
-</div>
-
-<div class="preview">
-<img id="preview2">
-</div>
-
-<div class="upload-box">
-
-<input type="file"
-accept="image/*"
-onchange="previewImage(event,'preview2')">
-
-</div>
-
-<select class="custom-input">
-
-<option>Choose Size</option>
-<option>A4</option>
-<option>2x1 Feet</option>
-<option>3x2 Feet</option>
-
-</select>
-
-<button class="buy-btn"
-onclick="window.open('https://wa.me/919848830202?text=I want Acrylic Photo Frame')">
-
-Order on WhatsApp
-
-</button>
-
-</div>
+</a>
 
 </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -577,50 +391,6 @@ Customized Gifts • Waterproof Labels • Acrylic Frames
 </p>
 
 </footer>
-
-<script>
-
-function changePrice(id,price){
-
-document.getElementById(id).innerHTML = "₹" + price;
-
-}
-
-function previewImage(event,id){
-
-const image = document.getElementById(id);
-
-image.src = URL.createObjectURL(event.target.files[0]);
-
-image.style.display = "block";
-
-}
-  function selectVariant(button){
-
-const parent = button.parentElement;
-
-parent.querySelectorAll(".variant-btn")
-.forEach(btn=>btn.classList.remove("active"));
-
-button.classList.add("active");
-
-}
-
-function changeProductPrice(button,price){
-
-const parent = button.parentElement;
-
-parent.querySelectorAll(".variant-btn")
-.forEach(btn=>btn.classList.remove("active"));
-
-button.classList.add("active");
-
-document.getElementById("productPrice")
-.innerHTML = "₹" + price;
-
-}
-
-</script>
 
 </body>
 </html>
