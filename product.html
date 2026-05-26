@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SnapKart Product</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>SnapKart Book Labels</title>
 
 <style>
 
@@ -14,11 +11,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial, sans-serif;
 }
 
 body{
-background:#f5f5f5;
+background:#f3f3f3;
 }
 
 /* HEADER */
@@ -26,195 +23,318 @@ background:#f5f5f5;
 header{
 background:white;
 padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
 box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
 .logo{
-font-size:34px;
-font-weight:700;
+font-size:55px;
+font-weight:bold;
 }
 
 .logo span{
-color:#ff2e63;
+color:#ff2d7a;
 }
 
-/* PRODUCT */
+/* MAIN */
 
-.product-page{
-padding:50px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-background:white;
-margin:40px;
-border-radius:25px;
-}
-
-/* LEFT */
-
-.main-image img{
-width:100%;
-height:650px;
-object-fit:cover;
-border-radius:20px;
-}
-
-.thumb-row{
+.container{
+max-width:1400px;
+margin:auto;
+padding:40px 20px;
 display:flex;
-gap:15px;
-margin-top:15px;
+gap:40px;
+align-items:flex-start;
 }
 
-.thumb-row img{
-width:100px;
-height:100px;.thumb-row img{
-width:110px;
-height:110px;
+/* LEFT PREVIEW */
+
+.preview-section{
+flex:1;
+background:white;
+padding:30px;
+border-radius:25px;
+position:relative;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.preview-box{
+position:relative;
+width:100%;
+max-width:850px;
+margin:auto;
+}
+
+/* MAIN LABEL */
+
+#mainLabel{
+width:100%;
+display:block;
+border-radius:18px;
+}
+
+/* CUSTOMER PHOTO */
+
+#uploadedPhoto{
+position:absolute;
+top:22%;
+left:9%;
+width:20%;
+height:46%;
 object-fit:cover;
-border-radius:12px;
+border-radius:14px;
+border:4px solid white;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* NAME */
+
+#previewName{
+position:absolute;
+top:8%;
+left:42%;
+font-size:3vw;
+font-weight:bold;
+color:#1e2a78;
+}
+
+#previewSchool{
+position:absolute;
+bottom:11%;
+left:43%;
+font-size:2vw;
+font-weight:bold;
+color:#1e2a78;
+}
+
+/* THUMBNAILS */
+
+.thumbnails{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:25px;
+justify-content:center;
+}
+
+.thumbnails img{
+width:95px;
+height:70px;
+object-fit:cover;
+border-radius:10px;
 cursor:pointer;
 border:3px solid transparent;
 transition:0.3s;
+background:#eee;
 }
 
-.thumb-row img:hover{
-border-color:#ff2e63;
+.thumbnails img:hover{
+transform:scale(1.05);
+border-color:#ff2d7a;
 }
 
-/* RIGHT */
+/* RIGHT PANEL */
 
-.product-title{
-font-size:42px;
-font-weight:700;
-margin-bottom:20px;
+.product-info{
+width:360px;
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+position:sticky;
+top:20px;
+}
+
+.product-info h1{
+font-size:52px;
+line-height:1.1;
+margin-bottom:15px;
 }
 
 .price{
-font-size:40px;
-color:#ff2e63;
-font-weight:700;
-margin-bottom:20px;
-}
-
-.option-title{
-font-size:20px;
-font-weight:600;
-margin-top:25px;
+font-size:45px;
+font-weight:bold;
+color:#ff2d7a;
 margin-bottom:10px;
 }
 
-.option-buttons{
+.pack{
+font-size:22px;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+/* BUTTONS */
+
+.section-title{
+font-size:22px;
+font-weight:bold;
+margin:25px 0 15px;
+}
+
+.model-buttons{
 display:flex;
 flex-wrap:wrap;
 gap:10px;
 }
 
-.option-buttons button{
-padding:12px 20px;
+.model-buttons button{
+padding:12px 18px;
 border:none;
-background:#eee;
 border-radius:10px;
+background:#eee;
 cursor:pointer;
-font-weight:600;
+font-weight:bold;
 transition:0.3s;
 }
 
-.option-buttons button:hover{
-background:#111;
+.model-buttons button:hover{
+background:black;
 color:white;
 }
 
-.upload-box{
-margin-top:20px;
+/* INPUTS */
+
+.input-group{
+margin-top:22px;
 }
 
-.upload-box input{
-margin-top:10px;
+.input-group label{
+display:block;
+font-weight:bold;
+margin-bottom:10px;
+font-size:18px;
 }
 
-.text-input{
+.input-group input{
 width:100%;
 padding:15px;
-border:1px solid #ddd;
-border-radius:10px;
-margin-top:10px;
+border-radius:12px;
+border:2px solid #ddd;
 font-size:16px;
 }
 
-.buy-btn{
-margin-top:30px;
+/* WHATSAPP BUTTON */
+
+.order-btn{
 width:100%;
+margin-top:30px;
 padding:18px;
-background:#ff2e63;
-color:white;
 border:none;
+border-radius:15px;
+background:#25D366;
+color:white;
 font-size:22px;
-font-weight:700;
-border-radius:14px;
+font-weight:bold;
 cursor:pointer;
 transition:0.3s;
 }
 
-.buy-btn:hover{
-background:#e91e63;
+.order-btn:hover{
+transform:scale(1.02);
 }
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
-.product-page{
-grid-template-columns:1fr;
-padding:25px;
-margin:10px;
+.container{
+flex-direction:column;
 }
 
-.product-title{
-font-size:32px;
+.product-info{
+width:100%;
+position:static;
+}
+
+#previewName{
+font-size:6vw;
+}
+
+#previewSchool{
+font-size:4vw;
+}
+
+.logo{
+font-size:40px;
+}
+
+.product-info h1{
+font-size:42px;
 }
 
 }
 
 </style>
-
 </head>
 <body>
 
 <header>
-
 <div class="logo">
-Snap<span>Kart 🚀</span>
+Snap<span>Kart</span> 🚀
 </div>
-
 </header>
 
-<div class="product-page">
+<div class="container">
 
 <!-- LEFT -->
 
-<div>
+<div class="preview-section">
 
-<div class="main-image">
-<img id="mainImage"
-src="images/book-labels/Spiderman.webp">
+<div class="preview-box">
+
+<!-- MAIN LABEL -->
+<img id="mainLabel"
+src="images/book-labels/Barbie.webp">
+
+<!-- CUSTOMER PHOTO -->
+<img id="uploadedPhoto"
+src="images/book-labels/sample.png">
+
+<!-- LIVE NAME -->
+<div id="previewName">
+Hansomy Kiran
 </div>
 
-<div class="thumb-row">
+<!-- LIVE SCHOOL -->
+<div id="previewSchool">
+SCHOOL NAME
+</div>
 
-<img src="images/book-labels/Spiderman.webp"
-onclick="changeImage(this.src)">
+</div>
+
+<!-- THUMBNAILS -->
+
+<div class="thumbnails">
 
 <img src="images/book-labels/Barbie.webp"
-onclick="changeImage(this.src)">
+onclick="changeSticker(this.src)">
 
 <img src="images/book-labels/Doraemon.webp"
-onclick="changeImage(this.src)">
+onclick="changeSticker(this.src)">
 
 <img src="images/book-labels/Shinchan.webp"
-onclick="changeImage(this.src)">
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/Spiderman.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/Rocket.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/Astronaut.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/Durga.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/Ironman.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/SchoolBus.webp"
+onclick="changeSticker(this.src)">
+
+<img src="images/book-labels/viratkohli.webp"
+onclick="changeSticker(this.src)">
 
 </div>
 
@@ -222,70 +342,113 @@ onclick="changeImage(this.src)">
 
 <!-- RIGHT -->
 
-<div>
+<div class="product-info">
 
-<h1 class="product-title">
+<h1>
 School Book Labels with Customized Photo
 </h1>
 
-<div class="price">
+<div class="price" id="price">
 ₹99
 </div>
 
-<div class="option-title">
+<div class="pack">
+Pack of 30 Stickers
+</div>
+
+<div class="section-title">
 Sticker Models
 </div>
 
-<div class="option-buttons">
+<div class="model-buttons">
 
-<button>Spiderman</button>
-<button>Barbie</button>
-<button>Doraemon</button>
-<button>Shinchan</button>
-<button>Rocket</button>
+<button onclick="changeSticker('images/book-labels/Spiderman.webp')">
+Spiderman
+</button>
+
+<button onclick="changeSticker('images/book-labels/Barbie.webp')">
+Barbie
+</button>
+
+<button onclick="changeSticker('images/book-labels/Doraemon.webp')">
+Doraemon
+</button>
+
+<button onclick="changeSticker('images/book-labels/Shinchan.webp')">
+Shinchan
+</button>
+
+<button onclick="changeSticker('images/book-labels/Rocket.webp')">
+Rocket
+</button>
 
 </div>
 
-<div class="option-title">
+<div class="section-title">
 Paper Quality
 </div>
 
-<div class="option-buttons">
+<div class="model-buttons">
 
-<button>Normal</button>
-<button>Waterproof</button>
+<button onclick="setNormal()">
+Normal
+</button>
+
+<button onclick="setWaterproof()">
+Waterproof
+</button>
 
 </div>
 
-<div class="upload-box">
+<!-- UPLOAD -->
 
-<div class="option-title">
+<div class="input-group">
+
+<label>
 Upload Photo
+</label>
+
+<input type="file"
+id="photoUpload"
+accept="image/*">
+
 </div>
 
-<input type="file">
+<!-- STUDENT -->
 
-</div>
+<div class="input-group">
 
-<div class="option-title">
+<label>
 Student Name
-</div>
+</label>
 
 <input type="text"
-placeholder="Enter Student Name"
-class="text-input">
+id="studentName"
+placeholder="Enter Student Name">
 
-<div class="option-title">
+</div>
+
+<!-- SCHOOL -->
+
+<div class="input-group">
+
+<label>
 School Name
-</div>
+</label>
 
 <input type="text"
-placeholder="Enter School Name"
-class="text-input">
+id="schoolName"
+placeholder="Enter School Name">
 
-<button class="buy-btn"
-onclick="window.open('https://wa.me/919848830202?text=Hi SnapKart I want this product')">
+</div>
+
+<!-- BUTTON -->
+
+<button class="order-btn"
+onclick="orderWhatsApp()">
+
 Order on WhatsApp
+
 </button>
 
 </div>
@@ -294,9 +457,101 @@ Order on WhatsApp
 
 <script>
 
-function changeImage(src){
+/* CHANGE STICKER */
 
-document.getElementById("mainImage").src = src;
+function changeSticker(image){
+
+document.getElementById("mainLabel").src = image;
+
+}
+
+/* LIVE NAME */
+
+document.getElementById("studentName")
+.addEventListener("input", function(){
+
+document.getElementById("previewName")
+.innerText = this.value || "Hansomy Kiran";
+
+});
+
+/* LIVE SCHOOL */
+
+document.getElementById("schoolName")
+.addEventListener("input", function(){
+
+document.getElementById("previewSchool")
+.innerText = this.value || "SCHOOL NAME";
+
+});
+
+/* PHOTO UPLOAD */
+
+document.getElementById("photoUpload")
+.addEventListener("change", function(event){
+
+const file = event.target.files[0];
+
+if(file){
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+document.getElementById("uploadedPhoto")
+.src = e.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+});
+
+/* PRICE */
+
+function setNormal(){
+
+document.getElementById("price")
+.innerText = "₹99";
+
+}
+
+function setWaterproof(){
+
+document.getElementById("price")
+.innerText = "₹129";
+
+}
+
+/* WHATSAPP */
+
+function orderWhatsApp(){
+
+let name =
+document.getElementById("studentName").value;
+
+let school =
+document.getElementById("schoolName").value;
+
+let price =
+document.getElementById("price").innerText;
+
+let msg =
+`Hello SnapKart 🚀
+
+I want to order School Book Labels
+
+Student Name: ${name}
+
+School Name: ${school}
+
+Price: ${price}`;
+
+window.open(
+`https://wa.me/919848830202?text=${encodeURIComponent(msg)}`
+);
 
 }
 
