@@ -249,6 +249,27 @@ font-weight:700;
 cursor:pointer;
 }
 
+  .variant-group{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:10px;
+}
+
+.variant-btn{
+padding:12px 18px;
+border:none;
+border-radius:12px;
+background:#eee;
+cursor:pointer;
+font-weight:600;
+transition:0.3s;
+}
+
+.variant-btn.active{
+background:#111;
+color:white;
+}
 /* FOOTER */
 
 footer{
@@ -369,62 +390,128 @@ Trending Products
 
 <section class="products">
 
-<!-- PRODUCT 1 -->
+<!-- PRODUCT CARD -->
 
 <div class="product-card">
 
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+<img id="mainProductImage"
+src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
 
 <div class="product-info">
 
-<h3>School Book Labels</h3>
+<h3>Acrylic Photo Frame</h3>
 
-<div class="price" id="price1">
-₹99
+<div class="price" id="productPrice">
+₹599
 </div>
 
-<div class="quality-buttons">
+<!-- MODEL OPTIONS -->
 
-<button class="normal-btn"
-onclick="changePrice('price1',99)">
-Normal
+<h4 style="margin-bottom:10px;">Choose Model</h4>
+
+<div class="variant-group">
+
+<button class="variant-btn active"
+onclick="selectVariant(this)">
+MODEL 1
 </button>
 
-<button class="waterproof-btn"
-onclick="changePrice('price1',129)">
-Waterproof
+<button class="variant-btn"
+onclick="selectVariant(this)">
+MODEL 2
+</button>
+
+<button class="variant-btn"
+onclick="selectVariant(this)">
+MODEL 3
+</button>
+
+<button class="variant-btn"
+onclick="selectVariant(this)">
+MODEL 4
 </button>
 
 </div>
+
+<!-- SIZE OPTIONS -->
+
+<h4 style="margin-top:20px;margin-bottom:10px;">
+Choose Size
+</h4>
+
+<div class="variant-group">
+
+<button class="variant-btn active"
+onclick="changeProductPrice(this,599)">
+A4
+</button>
+
+<button class="variant-btn"
+onclick="changeProductPrice(this,1299)">
+1x1.5 Feet
+</button>
+
+<button class="variant-btn"
+onclick="changeProductPrice(this,2499)">
+2x3 Feet
+</button>
+
+<button class="variant-btn"
+onclick="changeProductPrice(this,4999)">
+3x4 Feet
+</button>
+
+</div>
+
+<!-- THICKNESS -->
+
+<h4 style="margin-top:20px;margin-bottom:10px;">
+Thickness
+</h4>
+
+<div class="variant-group">
+
+<button class="variant-btn active"
+onclick="selectVariant(this)">
+3mm
+</button>
+
+<button class="variant-btn"
+onclick="selectVariant(this)">
+5mm
+</button>
+
+<button class="variant-btn"
+onclick="selectVariant(this)">
+8mm
+</button>
+
+</div>
+
+<!-- IMAGE PREVIEW -->
 
 <div class="preview">
-<img id="preview1">
+<img id="preview2">
 </div>
 
 <div class="upload-box">
 
 <input type="file"
 accept="image/*"
-onchange="previewImage(event,'preview1')">
+onchange="previewImage(event,'preview2')">
 
 </div>
 
+<!-- CUSTOM NAME -->
+
 <input type="text"
 class="custom-input"
-placeholder="Enter Student Name">
+placeholder="Enter Name">
 
-<select class="custom-input">
-
-<option>Select Theme</option>
-<option>Spiderman</option>
-<option>Krishna</option>
-<option>Princess</option>
-<option>Anime</option>
-
-</select>
+<!-- WHATSAPP -->
 
 <button class="buy-btn"
-onclick="window.open('https://wa.me/919848830202?text=I want School Book Labels')">
+onclick="window.open('https://wa.me/919848830202?text=I want Acrylic Photo Frame')">
 
 Order on WhatsApp
 
@@ -507,6 +594,30 @@ const image = document.getElementById(id);
 image.src = URL.createObjectURL(event.target.files[0]);
 
 image.style.display = "block";
+
+}
+  function selectVariant(button){
+
+const parent = button.parentElement;
+
+parent.querySelectorAll(".variant-btn")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+}
+
+function changeProductPrice(button,price){
+
+const parent = button.parentElement;
+
+parent.querySelectorAll(".variant-btn")
+.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+document.getElementById("productPrice")
+.innerHTML = "₹" + price;
 
 }
 
