@@ -95,10 +95,7 @@ font-weight:600;
 
 .hero-image img{
 width:100%;
-height:auto;
-display:block;
 border-radius:25px;
-object-fit:cover;
 }
 
 /* SECTION TITLE */
@@ -177,6 +174,30 @@ color:#ff2e73;
 margin-bottom:20px;
 }
 
+.quality-buttons{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.quality-buttons button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:600;
+}
+
+.normal-btn{
+background:#eee;
+}
+
+.waterproof-btn{
+background:#111;
+color:white;
+}
+
 .preview{
 width:100%;
 height:220px;
@@ -228,7 +249,7 @@ font-weight:700;
 cursor:pointer;
 }
 
-.variant-group{
+  .variant-group{
 display:flex;
 flex-wrap:wrap;
 gap:10px;
@@ -249,7 +270,6 @@ transition:0.3s;
 background:#111;
 color:white;
 }
-
 /* FOOTER */
 
 footer{
@@ -314,12 +334,13 @@ height:110px;
 <div class="hero-text">
 
 <h1>
-Premium <span>Customized</span> Gifts & Labels
+Crafting <span>Your Memories</span> Into Stunning Creations
 </h1>
 
 <p>
-Create waterproof school labels, acrylic photo frames,
-custom gifts and premium printing designs for your loved ones.
+From premium photo frames to custom gifts, name boards, mugs,
+stickers and creative prints — we design every product with style,
+quality and a personal touch made specially for you.
 </p>
 
 <button class="hero-btn">
@@ -330,7 +351,7 @@ Shop Now
 
 <div class="hero-image">
 
-<img src="./images/banner.png">
+<img src="images/snapkart banner.png">
 
 </div>
 
@@ -343,7 +364,7 @@ Top Categories
 <section class="categories">
 
 <div class="cat">
-<img src="images/book-labels/Astronaut.webp">
+<img src="images/book-labels/Astronaut.webp>
 <h3>Book Labels</h3>
 </div>
 
@@ -370,6 +391,8 @@ Trending Products
 
 <section class="products">
 
+<!-- PRODUCT CARD -->
+
 <div class="product-card">
 
 <img id="mainProductImage"
@@ -382,6 +405,8 @@ src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&au
 <div class="price" id="productPrice">
 ₹599
 </div>
+
+<!-- MODEL OPTIONS -->
 
 <h4 style="margin-bottom:10px;">Choose Model</h4>
 
@@ -408,6 +433,8 @@ MODEL 4
 </button>
 
 </div>
+
+<!-- SIZE OPTIONS -->
 
 <h4 style="margin-top:20px;margin-bottom:10px;">
 Choose Size
@@ -437,6 +464,8 @@ onclick="changeProductPrice(this,4999)">
 
 </div>
 
+<!-- THICKNESS -->
+
 <h4 style="margin-top:20px;margin-bottom:10px;">
 Thickness
 </h4>
@@ -460,6 +489,8 @@ onclick="selectVariant(this)">
 
 </div>
 
+<!-- IMAGE PREVIEW -->
+
 <div class="preview">
 <img id="preview2">
 </div>
@@ -472,9 +503,59 @@ onchange="previewImage(event,'preview2')">
 
 </div>
 
+<!-- CUSTOM NAME -->
+
 <input type="text"
 class="custom-input"
 placeholder="Enter Name">
+
+<!-- WHATSAPP -->
+
+<button class="buy-btn"
+onclick="window.open('https://wa.me/919848830202?text=I want Acrylic Photo Frame')">
+
+Order on WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+
+<h3>Acrylic Photo Frame</h3>
+
+<div class="price">
+₹599
+</div>
+
+<div class="preview">
+<img id="preview2">
+</div>
+
+<div class="upload-box">
+
+<input type="file"
+accept="image/*"
+onchange="previewImage(event,'preview2')">
+
+</div>
+
+<select class="custom-input">
+
+<option>Choose Size</option>
+<option>A4</option>
+<option>2x1 Feet</option>
+<option>3x2 Feet</option>
+
+</select>
 
 <button class="buy-btn"
 onclick="window.open('https://wa.me/919848830202?text=I want Acrylic Photo Frame')">
@@ -501,6 +582,12 @@ Customized Gifts • Waterproof Labels • Acrylic Frames
 
 <script>
 
+function changePrice(id,price){
+
+document.getElementById(id).innerHTML = "₹" + price;
+
+}
+
 function previewImage(event,id){
 
 const image = document.getElementById(id);
@@ -510,8 +597,7 @@ image.src = URL.createObjectURL(event.target.files[0]);
 image.style.display = "block";
 
 }
-
-function selectVariant(button){
+  function selectVariant(button){
 
 const parent = button.parentElement;
 
